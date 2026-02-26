@@ -187,7 +187,7 @@ export default function Today() {
 
         <div className="topActions">
           <button className="ghost" onClick={() => navigate("/dashboard")}>
-            📊 Dashboard
+            📊 History
           </button>
           <button className="ghost" onClick={() => navigate("/schedule")}>
             📅 Schedule

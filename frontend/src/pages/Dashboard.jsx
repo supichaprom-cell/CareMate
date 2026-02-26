@@ -6,16 +6,32 @@ export default function Dashboard() {
 
   // 🔥 จำลองข้อมูล 7 วัน แบบเนียน ๆ ไม่เท่ากัน
   const dailyStats = useMemo(() => {
-    return [
-      { date: "2026-02-24", taken: 5, total: 5 },
-      { date: "2026-02-23", taken: 3, total: 4 },
-      { date: "2026-02-22", taken: 0, total: 0 },
-      { date: "2026-02-21", taken: 2, total: 6 },
-      { date: "2026-02-20", taken: 4, total: 4 },
-      { date: "2026-02-19", taken: 1, total: 3 },
-      { date: "2026-02-18", taken: 3, total: 5 }
+    // ✅ สร้าง array 7 วันล่าสุดแบบอิง “วันนี้” อัตโนมัติ
+    // index 0 = เมื่อวาน, 1 = 2 วันก่อน, ... (สมจริงกว่า)
+    const fmt = (d) => d.toISOString().slice(0, 10);
+
+    const makeDate = (daysAgo) => {
+      const d = new Date();
+      d.setDate(d.getDate() - daysAgo);
+      return fmt(d);
+    };
+
+    // ✅ ตัวเลขเดิมของคุณคงไว้ แค่เปลี่ยน date ให้เลื่อนตามวันจริง
+    const template = [
+      { taken: 5, total: 5 },
+      { taken: 3, total: 4 },
+      { taken: 0, total: 0 },
+      { taken: 2, total: 6 },
+      { taken: 4, total: 4 },
+      { taken: 1, total: 3 },
+      { taken: 3, total: 5 }
     ];
-  }, []);
+
+  return template.map((t, i) => ({
+    date: makeDate(i + 1), // ✅ i+1 => เริ่มที่ “เมื่อวาน”
+    ...t
+  }));
+}, []);
 
   // 🔥 คำนวณภาพรวม
   const summary = useMemo(() => {
