@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap");
+
+* {
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e0f2ff, #f3e8ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* WRAPPER */
+.add-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* CARD */
+.add-card {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.12),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITLE */
+.add-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #6366f1, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.add-sub {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+/* INPUT */
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  transition: 0.25s;
+  background: #f9fafb;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* TIME ROW */
+.time-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.add-time-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  transition: 0.2s ease;
+}
+
+.add-time-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.35);
+}
+
+/* TIME CHIPS */
+.time-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #eef2ff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  background: #c7d2fe;
+  transform: scale(1.05);
+}
+
+/* DAYS */
+.days-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.day-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f3f4f6;
+  transition: 0.25s;
+}
+
+.day-btn:hover {
+  transform: scale(1.1);
+}
+
+.day-btn.active {
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* SAVE BUTTON */
+.save-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.3);
+}
+
+.save-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(99, 102, 241, 0.45);
+}
